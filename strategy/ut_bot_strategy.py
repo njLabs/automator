@@ -1,6 +1,8 @@
+# TODO: complete this asap
 import numpy as np
 import talib as ta
 from indicators import HA
+
 
 def UT_Bot_Alerts(df, sensitivity, atr_period, heikin_ashi=False):
     close = df['Close']

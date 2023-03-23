@@ -13,6 +13,7 @@ class ScannerBB:
         self.df['bb_high'], self.df['bb_mid'], self.df['bb_low'] = ta.BBANDS(self.df['Close'], timeperiod=20)
 
     def bb_scanner(self):
+        #TODO: add datetime to check the latency between scanner and order_puncher
         # sl_value = candle_data['close'] + (atr_multiplier * candle_data['atr'])
         self.df['faker'] = (self.df['bb_low'] * 0.15 / 100)
         self.df['diff'] = (self.df['bb_low'] + self.df['faker']) > self.df.shift(2)['bb_low']
